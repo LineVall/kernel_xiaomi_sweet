@@ -4,7 +4,7 @@
 #include "linux/types.h"
 #include "linux/workqueue.h"
 
-#define KERNEL_SU_VERSION 11184
+#define KERNEL_SU_VERSION 11203
 
 #define KERNEL_SU_OPTION 0xDEADBEEF
 
