@@ -832,6 +832,20 @@ static void ufshcd_cmd_log_init(struct ufs_hba *hba)
 {
 }
 
+static void ufshcd_dme_cmd_log(struct ufs_hba *hba, char *str, u8 cmd_id)
+{
+}
+
+static void ufshcd_custom_cmd_log(struct ufs_hba *hba, char *str)
+{
+}
+
+static void ufshcd_print_cmd_log(struct ufs_hba *hba)
+{
+}
+#endif
+
+#if defined(CONFIG_TRACEPOINTS) && !defined(CONFIG_SCSI_UFSHCD_CMD_LOGGING)
 static void __ufshcd_cmd_log(struct ufs_hba *hba, char *str, char *cmd_type,
 			     unsigned int tag, u8 cmd_id, u8 idn, u8 lun,
 			     sector_t lba, int transfer_len)
@@ -848,18 +862,6 @@ static void __ufshcd_cmd_log(struct ufs_hba *hba, char *str, char *cmd_type,
 	entry.tag = tag;
 
 	ufshcd_add_command_trace(hba, &entry, strcmp(cmd_type, "clk-gating"));
-}
-
-static void ufshcd_dme_cmd_log(struct ufs_hba *hba, char *str, u8 cmd_id)
-{
-}
-
-static void ufshcd_custom_cmd_log(struct ufs_hba *hba, char *str)
-{
-}
-
-static void ufshcd_print_cmd_log(struct ufs_hba *hba)
-{
 }
 #endif
 
