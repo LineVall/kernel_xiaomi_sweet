@@ -59,7 +59,6 @@ struct npu_network {
 	atomic_t ref_cnt;
 	bool is_valid;
 	bool is_active;
-	bool is_unloading;
 	bool fw_error;
 	bool cmd_pending;
 	bool cmd_async;
